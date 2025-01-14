@@ -6,79 +6,88 @@
 [![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/asheroto/winget-install)](https://github.com/asheroto/winget-install/releases)
 
 [![GitHub Sponsor](https://img.shields.io/github/sponsors/asheroto?label=Sponsor&logo=GitHub)](https://github.com/sponsors/asheroto?frequency=one-time&sponsor=asheroto)
-<a href="https://ko-fi.com/asheroto"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-Fi Button" height="20px"></a>
-<a href="https://www.buymeacoffee.com/asheroto"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=seb6596&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=asheroto&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff)" height="40px"></a>
+
+<a href="https://ko-fi.com/asheroto">
+<img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-Fi Button" height="20px">
+</a>
+
+<a href="https://www.buymeacoffee.com/asheroto">
+<img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=seb6596&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=asheroto&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff)" height="40px" alt="Buy me a coffee">
+</a>
 
 # Install WinGet from PowerShell
 
 **WinGet, a command line package manager, doesn't have a command line installer? 🤣 Now it does! 😊**
 
-> [!NOTE]  
+> [!NOTE]
 > **What's New?**
-> - Version 5 Released!  
+>
+> - Version 5 Released!
 > - In response to the evolving nature of WinGet methods and dependencies, we have updated the installation approach to use `Repair-WinGetPackageManager`, allowing Microsoft to manage these dependencies directly. This will help avoid some of the issues faced when installing WinGet. Server 2019 will continue through the traditional method.
 > - Improved exit handling to prevent PowerShell window from closing.
 
 ## Table of Contents
 
--   [Requirements](#requirements)
--   [Features](#features)
--   [Script Functionality](#script-functionality)
--   [Setup](#setup)
-    -   [Method 1 - PowerShell Gallery](#method-1---powershell-gallery)
-        -   [Usage](#usage)
-    -   [Method 2 - One Line Command (Runs Immediately)](#method-2---one-line-command-runs-immediately)
-        -   [Option A: asheroto.com short URL](#option-a-asherotocom-short-url)
-        -   [Option B: WinGet.pro short URL](#option-b-WinGetpro-short-url)
-        -   [Option C: direct release URL](#option-c-direct-release-url)
-    -   [Method 3 - Download Locally and Run](#method-3---download-locally-and-run)
--   [Parameters](#parameters)
-    -   [Example Parameters Usage](#example-parameters-usage)
--   [Global Variables](#global-variables)
-    -   [Example Global Variables Usage](#example-global-variables-usage)
--   [Troubleshooting](#troubleshooting)
--   [Contributing](#contributing)
+- [Install WinGet from PowerShell](#install-winget-from-powershell)
+  - [Table of Contents](#table-of-contents)
+  - [Requirements](#requirements)
+  - [Features](#features)
+  - [Script Functionality](#script-functionality)
+  - [Setup](#setup)
+    - [Method 1 - PowerShell Gallery](#method-1---powershell-gallery)
+      - [Usage](#usage)
+    - [Method 2 - One Line Command (Runs Immediately)](#method-2---one-line-command-runs-immediately)
+      - [Option A: asheroto.com short URL](#option-a-asherotocom-short-url)
+      - [Option B: WinGet.pro short URL](#option-b-wingetpro-short-url)
+      - [Option C: direct release URL](#option-c-direct-release-url)
+    - [Method 3 - Download Locally and Run](#method-3---download-locally-and-run)
+  - [Parameters](#parameters)
+    - [Example Parameters Usage](#example-parameters-usage)
+  - [Global Variables](#global-variables)
+    - [Example Global Variables Usage](#example-global-variables-usage)
+  - [Troubleshooting](#troubleshooting)
+  - [Contributing](#contributing)
 
 ## Requirements
 
--   Requires PowerShell running with Administrator rights
-    -   WinGet does _not_ officially support installation or use of the [SYSTEM account](https://github.com/microsoft/winget-cli/discussions/962)
--   Compatible with:
-    -   Windows 10 (Version 1809 or higher)
-    -   Windows 11
-    -   Server 2019/2022
-    -   Windows Sandbox
--   Not compatible with:
-    -   Server 2016 or lower (WinGet not supported)
+- Requires PowerShell running with Administrator rights
+  - WinGet does _not_ officially support installation or use of the [SYSTEM account](https://github.com/microsoft/winget-cli/discussions/962)
+- Compatible with:
+  - Windows 10 (Version 1809 or higher)
+  - Windows 11
+  - Server 2019/2022
+  - Windows Sandbox
+- Not compatible with:
+  - Server 2016 or lower (WinGet not supported)
 
 ## Features
 
--   Installs [WinGet](https://github.com/microsoft/winget-cli) directly from PowerShell
--   Always fetches the latest WinGet version
--   Automatically verifies OS compatibility
--   Determines and installs the appropriate prerequisites based on OS version
--   Supports x86/x64 and arm/arm64 architectures
--   Allows bypassing of existing WinGet installation verification through `-Force` parameter or `$Force` session variable
--   Supports irm/iex one-line command using short URL
--   Supports automatically relaunching in `conhost` and ending active processes associated with WinGet that could interfere with the installation
--   Code is hosted on [PowerShell Gallery](https://www.powershellgallery.com/packages/winget-install)
+- Installs [WinGet](https://github.com/microsoft/winget-cli) directly from PowerShell
+- Always fetches the latest WinGet version
+- Automatically verifies OS compatibility
+- Determines and installs the appropriate prerequisites based on OS version
+- Supports x86/x64 and arm/arm64 architectures
+- Allows bypassing of existing WinGet installation verification through `-Force` parameter or `$Force` session variable
+- Supports irm/iex one-line command using short URL
+- Supports automatically relaunching in `conhost` and ending active processes associated with WinGet that could interfere with the installation
+- Code is hosted on [PowerShell Gallery](https://www.powershellgallery.com/packages/winget-install)
 
 ## Script Functionality
 
--   Identifies processor architecture to decide which prerequisites are needed (x86/x64 or arm/arm64)
--   Checks Windows OS version for compatibility (Windows 10, Windows 11, Server 2019/2022)
--   If Windows 10, verifies release ID for compatibility (must be 1809 or newer)
--   All OSes except Server 2019
-    -   Installs the NuGet package provider for PowerShell Gallery (if not already present)
-    -   Installs the [Microsoft.WinGet.Client](https://www.powershellgallery.com/packages/Microsoft.WinGet.Client/) from PowerShell Gallery
-    -   Runs `Repair-WinGetPackageManager -AllUsers` which actually installs WinGet and its dependencies, fixing any issues along the way
--   Server 2019 only
-    -   Uses the UI.Xaml and VCLibs as [recommended by Microsoft](https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget-on-windows-sandbox)
-    -   The WinGet-cli license is downloaded using the latest version from GitHub
-    -   Installs Visual C++ Redistributable if version 14 or higher is not already installed
-    -   [WinGet-cli](https://github.com/microsoft/winget-cli) is then installed using the latest version from GitHub
-    -   Adjust access rights & PATH environment variable
--   Runs command registration if the WinGet command is not detected at the end of installation
+- Identifies processor architecture to decide which prerequisites are needed (x86/x64 or arm/arm64)
+- Checks Windows OS version for compatibility (Windows 10, Windows 11, Server 2019/2022)
+- If Windows 10, verifies release ID for compatibility (must be 1809 or newer)
+- All OSes except Server 2019
+  - Installs the NuGet package provider for PowerShell Gallery (if not already present)
+  - Installs the [Microsoft.WinGet.Client](https://www.powershellgallery.com/packages/Microsoft.WinGet.Client/) from PowerShell Gallery
+  - Runs `Repair-WinGetPackageManager -AllUsers` which actually installs WinGet and its dependencies, fixing any issues along the way
+- Server 2019 only
+  - Uses the UI.Xaml and VCLibs as [recommended by Microsoft](https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget-on-windows-sandbox)
+  - The WinGet-cli license is downloaded using the latest version from GitHub
+  - Installs Visual C++ Redistributable if version 14 or higher is not already installed
+  - [WinGet-cli](https://github.com/microsoft/winget-cli) is then installed using the latest version from GitHub
+  - Adjust access rights & PATH environment variable
+- Runs command registration if the WinGet command is not detected at the end of installation
 
 ## Setup
 
@@ -164,7 +173,7 @@ You can use the `-Force` or `-ForceClose` parameters if needed, or use `$Force =
 **No parameters are required** to run the script, but there are some optional parameters to use if needed.
 
 | Parameter         | Description                                                                                                                                                                                                                                                   |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `-Debug`          | Enables debug mode, showing additional information for troubleshooting.                                                                                                                                                                                       |
 | `-Force`          | Ensures the installation of WinGet and its dependencies, even if they are already present.                                                                                                                                                                    |
 | `-ForceClose`     | If Windows Terminal has trouble installing WinGet, use this parameter to relaunch the script in conhost.exe and automatically end any active processes associated with WinGet that could interfere with the installation.                                     |
@@ -173,7 +182,7 @@ You can use the `-Force` or `-ForceClose` parameters if needed, or use `$Force =
 | `-NoExit`         | By default, the script exits immediately after completion. Although this is not supposed to close the PowerShell window, sometimes it still occurs. Use this parameter to pause the script indefinitely after execution; pressing Enter will exit the script. |
 | `-UpdateSelf`     | Updates the script to the latest version.                                                                                                                                                                                                                     |
 | `-Version`        | Displays the version of the script.                                                                                                                                                                                                                           |
-| `-Help`           | Displays the full help information for the script.                                                                                                                                                                                                            |     |
+| `-Help`           | Displays the full help information for the script.                                                                                                                                                                                                            |
 
 ### Example Parameters Usage
 
@@ -200,17 +209,17 @@ winget-install
 
 ## Troubleshooting
 
--   Before releasing a new version, the script is tested on a clean install of Windows 10 22H2, Server 2022 21H2, and Windows 11 22H2.
--   If you run into an issue, please ensure your system is compatible & fully updated.
--   Sometimes PowerShell closes the window before you can read the output. To prevent this, you can use the `-Wait` parameter to pause the script for a few seconds or the `-NoExit` parameter to keep the window open indefinitely. Improving script exit functionality is on our TODO list.
--   Try running `winget-install` again, sometimes the script will fail due to a temporary issue with the prerequisite server URLs.
--   Try using the `-Debug` parameters to see if it provides any additional information.
--   If you're getting a `resource in use` error message, run the script again with the `-ForceClose` parameter.
--   Try [installing WinGet manually](https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget-on-windows-sandbox) to see if the issue exists with WinGet itself.
--   If the issue occurs when installing WinGet manually, please open an [issue on the WinGet-cli repo](https://github.com/microsoft/winget-cli/issues) (unrelated to this script).
--   Check the [WinGet-cli Troubleshooting Guide](https://github.com/microsoft/winget-cli/blob/master/doc/troubleshooting/README.md).
--   Note that WinGet [does not officially support](https://github.com/microsoft/winget-cli/discussions/962) installing or running with the `SYSTEM` account.
--   If the problem **only** occurs when using this script, please open an issue here.
+- Before releasing a new version, the script is tested on a clean install of Windows 10 22H2, Server 2022 21H2, and Windows 11 22H2.
+- If you run into an issue, please ensure your system is compatible & fully updated.
+- Sometimes PowerShell closes the window before you can read the output. To prevent this, you can use the `-Wait` parameter to pause the script for a few seconds or the `-NoExit` parameter to keep the window open indefinitely. Improving script exit functionality is on our TODO list.
+- Try running `winget-install` again, sometimes the script will fail due to a temporary issue with the prerequisite server URLs.
+- Try using the `-Debug` parameters to see if it provides any additional information.
+- If you're getting a `resource in use` error message, run the script again with the `-ForceClose` parameter.
+- Try [installing WinGet manually](https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget-on-windows-sandbox) to see if the issue exists with WinGet itself.
+- If the issue occurs when installing WinGet manually, please open an [issue on the WinGet-cli repo](https://github.com/microsoft/winget-cli/issues) (unrelated to this script).
+- Check the [WinGet-cli Troubleshooting Guide](https://github.com/microsoft/winget-cli/blob/master/doc/troubleshooting/README.md).
+- Note that WinGet [does not officially support](https://github.com/microsoft/winget-cli/discussions/962) installing or running with the `SYSTEM` account.
+- If the problem **only** occurs when using this script, please open an issue here.
 
 ## Contributing
 
