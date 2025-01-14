@@ -1,4 +1,11 @@
 {
+  "[markdown]": {
+    "editor.defaultFormatter": "Jota0222.multi-formatter",
+    "multiFormatter.formatterList": [
+      "DavidAnson.vscode-markdownlint",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
   "[powershell]": {
     "editor.tabSize": 4
   },
