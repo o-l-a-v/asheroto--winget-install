@@ -1,6 +1,4 @@
----
-title: winget-install
----
+# winget-install
 
 **WinGet, a command line package manager, doesn't have a command line installer? 🤣** Now it does! 😊
 
@@ -15,24 +13,25 @@ title: winget-install
 
 <details><summary>Table of Contents</summary>
 
-- [What's New?](#whats-new)
-- [Requirements](#requirements)
-- [Features](#features)
-- [Script Functionality](#script-functionality)
-- [Setup](#setup)
-  - [Method 1 - PowerShell Gallery](#method-1---powershell-gallery)
-    - [Usage](#usage)
-  - [Method 2 - One Line Command (Runs Immediately)](#method-2---one-line-command-runs-immediately)
-    - [Option A: asheroto.com short URL](#option-a-asherotocom-short-url)
-    - [Option B: WinGet.pro short URL](#option-b-wingetpro-short-url)
-    - [Option C: direct release URL](#option-c-direct-release-url)
-  - [Method 3 - Download Locally and Run](#method-3---download-locally-and-run)
-- [Parameters](#parameters)
-  - [Example Parameters Usage](#example-parameters-usage)
-- [Global Variables](#global-variables)
-  - [Example Global Variables Usage](#example-global-variables-usage)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
+- [winget-install](#winget-install)
+  - [What's New?](#whats-new)
+  - [Requirements](#requirements)
+  - [Features](#features)
+  - [Script Functionality](#script-functionality)
+  - [Setup](#setup)
+    - [Method 1 - PowerShell Gallery](#method-1---powershell-gallery)
+      - [Usage](#usage)
+    - [Method 2 - One Line Command (Runs Immediately)](#method-2---one-line-command-runs-immediately)
+      - [Option A: asheroto.com short URL](#option-a-asherotocom-short-url)
+      - [Option B: WinGet.pro short URL](#option-b-wingetpro-short-url)
+      - [Option C: direct release URL](#option-c-direct-release-url)
+    - [Method 3 - Download Locally and Run](#method-3---download-locally-and-run)
+  - [Parameters](#parameters)
+    - [Example Parameters Usage](#example-parameters-usage)
+  - [Global Variables](#global-variables)
+    - [Example Global Variables Usage](#example-global-variables-usage)
+  - [Troubleshooting](#troubleshooting)
+  - [Contributing](#contributing)
 
 </details>
 
