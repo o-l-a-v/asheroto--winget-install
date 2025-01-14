@@ -1,5 +1,7 @@
 # winget-install
 
+**WinGet, a command line package manager, doesn't have a command line installer? 🤣** Now it does! 😊
+
 ![winget-install screenshot](https://github.com/user-attachments/assets/a30f6771-1a72-4b39-a9fb-f523802e1b79)
 
 [![PowerShell Gallery Downloads](https://img.shields.io/powershellgallery/dt/winget-install?label=PowerShell%20Gallery%20downloads)](https://www.powershellgallery.com/packages/winget-install)
@@ -9,22 +11,10 @@
 
 [![GitHub Sponsor](https://img.shields.io/github/sponsors/asheroto?label=Sponsor&logo=GitHub)](https://github.com/sponsors/asheroto?frequency=one-time&sponsor=asheroto) <a href="https://ko-fi.com/asheroto"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-Fi Button" height="20px"></a> <a href="https://www.buymeacoffee.com/asheroto"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=seb6596&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=asheroto&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff)" height="40px" alt="Buy me a coffee"></a>
 
-## Install WinGet from PowerShell
-
-**WinGet, a command line package manager, doesn't have a command line installer? 🤣 Now it does! 😊**
-
-> [!NOTE]
-> **What's New?**
->
-> - Version 5 Released!
-> - In response to the evolving nature of WinGet methods and dependencies, we have updated the installation approach to use `Repair-WinGetPackageManager`, allowing Microsoft to manage these dependencies directly. This will help avoid some of the issues faced when installing WinGet. Server 2019 will continue through the traditional method.
-> - Improved exit handling to prevent PowerShell window from closing.
-
-## Table of Contents
+<details><summary>Table of Contents</summary>
 
 - [winget-install](#winget-install)
-  - [Install WinGet from PowerShell](#install-winget-from-powershell)
-  - [Table of Contents](#table-of-contents)
+  - [What's New?](#whats-new)
   - [Requirements](#requirements)
   - [Features](#features)
   - [Script Functionality](#script-functionality)
@@ -42,6 +32,14 @@
     - [Example Global Variables Usage](#example-global-variables-usage)
   - [Troubleshooting](#troubleshooting)
   - [Contributing](#contributing)
+
+</details>
+
+## What's New?
+
+- Version 5 Released!
+- In response to the evolving nature of WinGet methods and dependencies, we have updated the installation approach to use `Repair-WinGetPackageManager`, allowing Microsoft to manage these dependencies directly. This will help avoid some of the issues faced when installing WinGet. Server 2019 will continue through the traditional method.
+- Improved exit handling to prevent PowerShell window from closing.
 
 ## Requirements
 
